@@ -1,6 +1,9 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<h3>前端技术测试 -- 像火一样埋伏</h3>
+<head></head>
+<body>
+<h3 align="center">像火一样埋伏的主页</h3>
+
 <div style="text-align:center;">
 	<button onclick="playPause()">播放/暂停</button>
 	<button onclick="makeBig()">大</button>
@@ -15,23 +18,26 @@
 
 <div style="text-align:center;">
 	<img src="resource/plant.jpg" draggable="true" ondragstart="drag(event)" width="200" heignt="100" />
+	<input type="button" value="点击测试" onclick="testJJ()" />
 </div>
 
-<div style="text-align:center;">
-	<canvas id="myCanvas" width="200" height="100"></canvas>
-</div>
-<script type="text/javascript">
-	var c=document.getElementById("myCanvas");
-	var cxt = c.getContext("2d");
-	cxt.fillStyle="#FF0000";
-	cxt.fillRect(0,0,150,75);
 
-
-	var myVideo = document.getElementById("video1");
-	function drag(ev){
-		ev.dataTransfer.setData();
+<script>
+	var name=prompt("欢迎来到本网站，请输入你的名字");
+	var content = "连名字都懒得输入，真SB";
+	switch(name){
+		case "胡盛国":  content="主人你好"; break;
+		case "袁善情":  content="夫人你好";break;
+		case "郑秋深":  content="今天黑石壕吏了吗，快去黑";break;
+		case "石壕吏":  content="你jj太小，走开";break;
+		case "田豪拓":  content="错了错了，你的名字应该是石壕吏";break;
+		default :  content="我并不认识你";break;
 	}
-	
+	alert(content);
+</script>
+</body>
+<script type="text/javascript">
+	var myVideo = document.getElementById("video1");	
 	function playPause(){
 		if(myVideo.paused)
 			myVideo.play();
@@ -49,6 +55,10 @@
 	
 	function makeNormal(){
 		myVideo.width=420;
+	}
+	
+	function testJJ(){
+		alert("你的jj只有1厘米");
 	}
 	
 </script>
