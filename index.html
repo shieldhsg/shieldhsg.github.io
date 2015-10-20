@@ -1,0 +1,53 @@
+<html>
+<div style="text-align:center;">
+	<button onclick="playPause()">播放/暂停</button>
+	<button onclick="makeBig()">大</button>
+	<button onclick="makeNormal()">中</button>
+	<button onclick="makeSmall()">小</button>
+	<br/>
+	<video id="video1" width="420" style="margin-top:15px;">
+		<source src="resource/cute.mp4"/>
+		你的浏览器太low了
+	</video>
+</div>
+
+<div style="text-align:center;">
+	<img src="resource/plant.jpg" draggable="true" ondragstart="drag(event)" width="200" heignt="100" />
+</div>
+
+<div style="text-align:center;">
+	<canvas id="myCanvas" width="200" height="100"></canvas>
+</div>
+<script type="text/javascript">
+	var c=document.getElementById("myCanvas");
+	var cxt = c.getContext("2d");
+	cxt.fillStyle="#FF0000";
+	cxt.fillRect(0,0,150,75);
+
+
+	var myVideo = document.getElementById("video1");
+	function drag(ev){
+		ev.dataTransfer.setData();
+	}
+	
+	function playPause(){
+		if(myVideo.paused)
+			myVideo.play();
+		else
+			myVideo.pause();
+	}
+	
+	function makeBig(){
+		myVideo.width=560;
+	}
+	
+	function makeSmall(){
+		myVideo.width=320;
+	}
+	
+	function makeNormal(){
+		myVideo.width=420;
+	}
+	
+</script>
+</html>
