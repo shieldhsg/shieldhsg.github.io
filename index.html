@@ -3,7 +3,6 @@
 <head></head>
 <body>
 <h3 align="center">像火一样埋伏的主页</h3>
-
 <div style="text-align:center;">
 	<button onclick="playPause()">播放/暂停</button>
 	<button onclick="makeBig()">大</button>
@@ -18,7 +17,8 @@
 
 <div style="text-align:center;">
 	<img src="resource/plant.jpg" draggable="true" ondragstart="drag(event)" width="200" heignt="100" />
-	<input type="button" value="点击测试" onclick="testJJ()" />
+	<br/>
+	<input type="button" value="更改颜色" onclick="changeColor()" />
 </div>
 
 
@@ -57,9 +57,15 @@
 		myVideo.width=420;
 	}
 	
-	function testJJ(){
-		alert("你的jj只有1厘米");
+	//更改文档颜色
+	function changeColor(){
+		if(document.body.bgColor=="yellow"){
+			document.body.bgColor="red";
+		}else if(document.body.bgColor=="red"){
+			document.body.bgColor="";
+		}else if(document.body.bgColor==""){
+			document.body.bgColor="yellow";
+		}
 	}
-	
 </script>
 </html>
